@@ -23,6 +23,7 @@ Also, the ld debug information is included for the debugging convenience.
 mkdir -p %{buildroot}/%{_prefix}/%{_lib}/debug/%{_lib}
 objcopy -j .note.gnu.build-id -j .debug_frame %{_prefix}/%{_lib}/debug/%{_lib}/libc-%{version}-2014.11.so.debug %{buildroot}%{_prefix}/%{_lib}/debug/%{_lib}/libc-%{version}-2014.11.so.debug
 cp %{_prefix}/%{_lib}/debug/%{_lib}/ld-%{version}-2014.11.so.debug %{buildroot}%{_prefix}/%{_lib}/debug/%{_lib}/ld-%{version}-2014.11.so.debug
+chmod 444 %{buildroot}%{_prefix}/%{_lib}/debug/%{_lib}/*.so.debug
 
 %files
 %defattr(-,root,root)
